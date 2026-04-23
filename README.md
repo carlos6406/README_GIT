@@ -1,7 +1,9 @@
-# Trabajo Individual 
+
+#
+ Trabajo Individual 
 Name = Viraca Pacolla Joel Carlos
 Celular = 64866872
-Email = joelviraca@gmail.com
+Eimail = joelviraca@gmail.com
 
 ##clase 1
 ### que es git?
@@ -53,6 +55,13 @@ git add README.md
 git status
 git commit
 
+###Justificacion 
+No pude asistir a la clase 1 del dia lunes por que tenia choques en la materia, tengo dos clases los lunes y jueves a las 20:15, de la materia de peril, los lunes el inge da avanses para presentar por ese motivo fui a su materia, ademas que despues en la revision habia muchas personas por ende tarde en salir de la clase
+y ruteo lo cambio su horario del martes por jueves 
+
+###Evidencia
+![Justificación](images/Justificacion_primer_dia.png)
+
 ##Clase 2
 ###estados de Git
 tenemor primero lo que son los estados de git
@@ -99,4 +108,71 @@ usuario.
 test: para tests o refactorización de uno ya existente.
 Si es necesario es mejor aniadir todo el contexto que sea necesario en el cuerpo del commit.
 
- 
+##clase 3
+
+###GitHub y Git
+GitHub es una plataforma en la nube y red social para desarrolladores que permite alojar, gestionar y colaborar en proyectos de software 
+
+###Git vs GitHub
+
+Git es el sistema de control de versiones que crea los "puntos de guardado", y GitHub es el servidor donde esos puntos se almacenan y se socializan con el mundo.
+
+###HTTPS
+
+Cuando clonamos y queremos usar un repositorio
+con HTTPS, este nos pedira autenticarnos cada
+vez, hasta pidiendonos un token.
+
+###SSH
+Configuramos en nuestra PC/Laptop ssh para
+comunicarnos con github, mediante una key la
+cual al ponerla en Github no necesitara
+pedirnos autenticarnos cada vez.
+
+###configuracion SSH
+
+En la terminal colocamos el siguiente comando desde Windows:
+ssh-keygen -t ed25519 -C “tu-correo@email.com”
+
+cat ~/.ssh/id_ed25519.pub
+
+/*Copias el contenido del anteroir comando y te
+diriges a github donde te diriges a tu perfil →
+Settings y luego SSH y GPG Keys y luego “New SSH
+Key” (1) y pegas tu key, le das un nombre para
+tu PC y click en “Add SSH Key”. (2)*/
+
+ssh -T git@github.com
+
+###Crear un repositorio de GitHub
+
+1: ver al apartado de perfil de ussuario en gitHub, buscar en Repositorios click en "New"
+2: Poner el nombre al repositorio si tiene una descripcion mejor y luego click en “Create Repository”
+
+
+###Conexcion repositorio Local de git con uno en Github
+
+git remote add origin git@github.com:TuUser/TuRepo.git
+git branch -M main
+
+git push -u origin main
+
+NOTA: PARA ESTO YA TIENES QUE HABER INICIALIZADO EL REPO LOCAL
+(git init) Y TENER UN COMMIT INICIAL AL MENOS (git add . + git
+commit -m “Initial commit”)
+
+###clonar un repositorio de Git: 
+Para ello haces el comando:
+git clone “git@github.com:TuUser/TuRepo.git”
+
+git clone “https://github.com/TuUser/TuRepo.git”
+cuando clonas por https te pide autentificacion constantemente
+para cambiar de hhtps a SSH se usa:
+git remote set-url origin “git@github.com:TuUser/TuRepo.git”
+
+la conexcion del repositorio remoto esta conectado a tu repo:
+git remote -v
+
+###comandos Subir y bajar cambios:
+Subir mis cambios.: git push origin <rama>
+Bajar los cambios hechos.: git pull origin <rama>
