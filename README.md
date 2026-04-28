@@ -76,10 +76,6 @@ git commit
 No pude asistir a la clase 1 del dia lunes por que tenia choques en la materia, tengo dos clases los lunes y jueves a las 20:15, de la materia de peril, los lunes el inge da avanses para presentar por ese motivo fui a su materia, ademas que despues en la revision habia muchas personas por ende tarde en salir de la clase y ruteo lo cambio su horario del martes por jueves
 
 
-### Evidencia Justificación
-
-![Justificación](images/Justificacion_primer_dia.png)
-
 ## Clase 2
 
 ### estados de Git
@@ -256,3 +252,129 @@ Subir mis cambios.: git push origin
 Bajar los cambios hechos.: git pull origin
 
 git branch -M main
+
+##clase 4
+
+###git remote
+
+git remote es el comando que nos permite gestionar nuestras
+conexiones con los repositorio remotos.
+
+git remote -v (Nos permite ver las URLs exactas donde
+apunta nuestro repositorio)
+
+git remote add <apodo> “url” (Vincula nuestro repo local
+con uno en la nube.)
+
+git remote set-url <apodo> “url” (Cambia la url donde
+apunta nuestro repositorio)
+
+###multiples SSH
+
+Si tenemos mas de una cuenta de Github o necesitamos
+tener otras cuentas es util tener mas de una llave SSH, pues
+esta nos da acceso a cada cuenta, es un tunel, pero cada
+cuenta necesita su tunel para que estos no choquen.
+
+###configurar multiples SSH
+
+Paso 1. Generamos el sshkey en con
+otro nombre:
+
+CONFIGURAR
+
+MULTIPLES
+
+SSH
+
+ssh-keygen -t ed25519 -C
+"micorreo@gmail.com" -f ~/.ssh/id_miname
+
+Cuenta Personal (la de siempre)
+Host github.com
+HostName github.com
+User git
+IdentityFile ~/.ssh/id_ed25519
+Cuenta del otro correo
+Host github-miname
+HostName github.com
+User git
+IdentityFile ~/.ssh/id_miname
+
+Host: Es el apodo o alias que le pones a la
+conexión. Es lo que escribes en la terminal
+después de git@.
+HostName: Es la dirección real del servidor
+a donde nos conectamos. Siempre será
+github.com
+User: Es el nombre de usuario del sistema
+remoto. Para GitHub, siempre, siempre es
+git.
+IdentityFile: Es la ruta exacta hacia la
+"escalera" (la llave privada) que quieres
+usar para ese Host específico.
+
+###configuraciones locales
+
+Las ocnfiguraciones locales imponen sobre las configuraciones globales
+
+git config user.name "Mi nuevo Name"
+git config user.email "micorreo@gmail.com"
+
+###git checkout
+
+¿Para qué sirve?
+
+Inspeccionar: Ver cómo era el código en un
+commit antiguo.
+
+Restaurar: Recuperar archivos que borramos o
+cambiamos.
+
+Experimentar: Probar cambios sin arruinar la
+rama principal.
+
+Cambiar: Saltarnos de una rama a otra (ej. de
+main a desarrollo).
+
+###el estado "detached head"
+
+¿Que quiere decir?
+
+Eres un espectador en el pasado.
+
+Puedes ver todo y escribir notas, pero no tienes
+"cuerpo" (rama).
+
+Si te vas al presente sin "encarnar" en una rama,
+tus cambios se pierden en el vacío.
+
+###¿Cómo ir y volver de un commit?
+
+Para ir atras debes hacer:
+git checkout <hash_antiguo>
+Y para volver al ultimo hash de la rama
+
+git checkout <rama>
+
+Si hiciste algo aca (como un commit) desaparece
+salvo que hagas:
+
+git checkout <hash_commit_creado>
+
+git checkout -b rama_nueva
+
+###Buenas practicas
+
+No trabajes mucho tiempo
+en 'Detached HEAD'
+
+Limpia tu Directorio de
+trabajo
+
+Úsalo para aprender
+
+###Justificacion 
+
+mi justificacion es debido por que el dia viernes no pude hacer mi tarea puntualmente debido a que me hagarro fiebre y se lo dije en la flisol por ende no pude hacer el readme por ende lo hago el dia de hoy po que me encuentro algo mejor
+
