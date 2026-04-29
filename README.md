@@ -438,3 +438,56 @@ git checkout <rama>
 | release/* | develop | main y develop | Preparar versión           |
 | hotfix/*  | main    | main y develop | Correcciones en producción |
 
+##clase 6
+
+### ¿Qué es git merge?
+Git merge se usa para fusionar ramas. Permite unir los cambios de una rama en otra para que ambas tengan los commits realizados.
+
+El flag `--no-ff` (no fast forward) evita que se pierda el historial de ramas y obliga a crear un commit de merge.
+
+```bash
+git merge --no-ff nombre-rama
+```
+
+### ¿Qué es git fetch?
+Git fetch permite verificar si hay cambios en el repositorio remoto sin aplicarlos en tu rama local.
+
+```bash
+git fetch
+```
+
+### ¿Qué es git pull?
+Git pull trae los cambios del repositorio remoto y los aplica en tu rama actual.
+
+```bash
+git pull origin nombre-rama
+```
+
+### ¿Qué es git push?
+Git push sube tus cambios al repositorio remoto.
+
+```bash
+git push origin nombre-rama
+```
+
+Si es la primera vez que subes la rama:
+
+```bash
+git push -u origin nombre-rama
+```
+
+### Flujo de trabajo (sin Pull Requests)
+
+```bash
+git checkout develop
+git fetch
+git pull origin develop
+git merge --no-ff nombre-rama
+
+### Resolver conflictos manualmente si aparecen
+git add .
+git commit
+
+git branch -D nombre-rama
+git push origin develop
+```
