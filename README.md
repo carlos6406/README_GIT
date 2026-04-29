@@ -378,3 +378,63 @@ trabajo
 
 mi justificacion es debido por que el dia viernes no pude hacer mi tarea puntualmente debido a que me hagarro fiebre y se lo dije en la flisol por ende no pude hacer el readme por ende lo hago el dia de hoy po que me encuentro algo mejor
 
+##clase 5
+
+### ¿Qué son las ramas?
+
+Las ramas son una de las principales herramientas en Git para trabajar de forma ordenada. Permiten crear caminos alternos del código sin afectar la versión principal del proyecto. :contentReference[oaicite:0]{index=0}
+
+
+### Git branch
+
+El comando `git branch` permite gestionar las ramas del proyecto.
+
+bash
+git branch
+
+Muestra las ramas disponibles y en cuál estás actualmente es el siguiente:
+
+git branch <rama>
+
+Crea una nueva rama a partir de la actual es el siguiente comando:
+
+git branch -D <rama>
+
+Elimina lo cual es la rama que estamos mencionando
+
+###Git checkout vs Git switch
+
+Antes, git checkout se usaba para varias cosas: cambiar ramas, moverse entre commits y restaurar archivos.
+
+Actualmente existe git switch, que está enfocado únicamente en el manejo de ramas, lo que hace el flujo más claro y evita errores.
+
+git checkout: más general (ramas, commits, archivos)
+git switch: solo para ramas, más directo y seguro
+
+###El estado "detached HEAD"
+
+Ocurre cuando te mueves a un commit específico en lugar de estar en una rama.
+
+En ese estado puedes revisar o hacer cambios, pero si no creas una rama, esos cambios pueden perderse.
+
+Para evitarlo:
+
+git checkout -b nueva_rama
+
+###¿Cómo ir y volver de un commit?
+
+Para ir a un commit anterior:
+
+git checkout <hash>
+
+Para volver a una rama:
+
+git checkout <rama>
+
+| Rama      | Nace de | Se integra en  | Propósito                  |
+| --------- | ------- | -------------- | -------------------------- |
+| develop   | main    | -              | Trabajo diario             |
+| feature/* | develop | develop        | Nuevas funcionalidades     |
+| release/* | develop | main y develop | Preparar versión           |
+| hotfix/*  | main    | main y develop | Correcciones en producción |
+
